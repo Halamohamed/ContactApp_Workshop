@@ -127,4 +127,15 @@ classDiagram
 ## 5: The MVC Design Pattern
 **Task:** Explain the MVC (Model-View-Controller) design pattern.
 
+*   **Model:** Represents the data and business logic of the application. In this case, the `Contact` class is part of the Model.
+*  **View:** Handles the presentation layer and user interface. The `ContactView` class
+*  **Controller:** Acts as an intermediary between the Model and the View, managing user input and updating the View accordingly. The `ContactController` class fulfills this role.
+
+**Exception Handling:** The Controller manages exceptions thrown by the Model and DAO layers, ensuring that the View displays appropriate messages to the user.
+
+**Separation of Concerns:** Each component has a distinct responsibility, promoting modularity and maintainability in the application.
+
+**Flow of Data:** The Controller receives user input from the View, processes it (possibly interacting with the Model), and then updates the View based on the results.
+
+**Benefits:** This pattern enhances code organization, facilitates testing, and allows for easier updates to the user interface or business logic without affecting other components.
 ---
