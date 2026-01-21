@@ -5,8 +5,8 @@ public class Contact {
     private String phoneNumber;
 
     public Contact(String name, String phoneNumber) {
-        this.name = name;
-        this.phoneNumber = phoneNumber;
+        setName(name);
+        setPhoneNumber(phoneNumber);
     }
 
     public String getName() {
@@ -14,6 +14,7 @@ public class Contact {
     }
 
     public void setName(String name) {
+        if(name == null) throw new IllegalArgumentException("Name cannot be null");
         this.name = name;
     }
 
@@ -22,6 +23,8 @@ public class Contact {
     }
 
     public void setPhoneNumber(String phoneNumber) {
+        if(phoneNumber == null || !phoneNumber.matches("^\\d{10}$"))
+            throw new IllegalArgumentException("Phone number cannot be null or must be 10 digits");
         this.phoneNumber = phoneNumber;
     }
 
