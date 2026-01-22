@@ -4,6 +4,9 @@ import se.lexicon.model.Contact;
 
 import java.util.List;
 
+/**
+ * View class to handle user interactions for contact management.
+ */
 public class ContactView {
 
     public String getUserInput(String prompt) {
@@ -11,6 +14,7 @@ public class ContactView {
         return name;
     }
 
+    // Display menu options to the user
     public void displayMenu() {
         IO.println("Contact Management System");
         IO.println("1. Add Contact");
@@ -19,6 +23,7 @@ public class ContactView {
         IO.println("4. Exit");
     }
 
+    // Display a list of contacts
     public void displayContacts(List<Contact> contacts){
         if(contacts.isEmpty()){
             IO.println("No contacts available.");
@@ -29,10 +34,12 @@ public class ContactView {
         }
     }
 
+    // Display a general message to the user
     public void displayMessage(String message){
         IO.println(message);
     }
 
+    // Display an error message to the user
     public void displayError(String errorMessage){
         IO.println("Error: " + errorMessage);
     }

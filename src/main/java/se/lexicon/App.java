@@ -3,7 +3,7 @@ package se.lexicon;
 import se.lexicon.controller.ContactController;
 
 /**
- *
+ * Entry point for the Contact Management System application.
  *
  */
 public class App 

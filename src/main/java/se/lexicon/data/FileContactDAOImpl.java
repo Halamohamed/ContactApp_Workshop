@@ -12,10 +12,15 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * File-based implementation of ContactDAO.
+ * Stores contacts in a text file.
+ */
 public class FileContactDAOImpl implements ContactDAO{
 
     Path filePath = Path.of("dir/contacts.txt");
 
+    // Reads List of contacts from file
     @Override
     public List<Contact> findAll() throws Exception {
         List<Contact> contacts = new ArrayList<>();
@@ -33,6 +38,7 @@ public class FileContactDAOImpl implements ContactDAO{
         return contacts;
     }
 
+    // Saves a new contact to the file
     @Override
     public void save(Contact contact) throws Exception {
         if (contact == null) {
@@ -50,6 +56,7 @@ public class FileContactDAOImpl implements ContactDAO{
 
     }
 
+    // Finds a contact by name
     @Override
     public Contact findByName(String name) throws Exception {
         return findAll().stream().filter(c -> c.getName().equalsIgnoreCase(name))

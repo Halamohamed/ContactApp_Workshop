@@ -1,5 +1,8 @@
 package se.lexicon.model;
 
+/**
+ * Represents a contact with a name and phone number.
+ */
 public class Contact {
     private String name;
     private String phoneNumber;

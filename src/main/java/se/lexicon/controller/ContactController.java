@@ -6,6 +6,9 @@ import se.lexicon.exception.ExceptionHandler;
 import se.lexicon.model.Contact;
 import se.lexicon.view.ContactView;
 
+/**
+ * Controller class to manage contact operations.
+ */
 public class ContactController {
 
     ContactDAO dao;
@@ -16,6 +19,9 @@ public class ContactController {
         this.view = new ContactView();
     }
 
+    /*
+        * Main loop to run the contact management application.
+     */
     public void run(){
         boolean exit = false;
         while (!exit) {
