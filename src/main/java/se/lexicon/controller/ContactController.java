@@ -13,10 +13,12 @@ public class ContactController {
 
     ContactDAO dao;
     ContactView view;
+    ExceptionHandler eh;
 
     public ContactController() {
         this.dao = new FileContactDAOImpl();
         this.view = new ContactView();
+        this.eh = new ExceptionHandler();
     }
 
     /*
@@ -35,14 +37,14 @@ public class ContactController {
                         dao.save(new Contact(name, phoneNumber));
                         view.displayMessage("Contact saved successfully.");
                     } catch (Exception e) {
-                        view.displayError(e.getMessage());
+                        eh.handler(e);
                     }
                     break;
                 case "2":
                     try {
                         view.displayContacts(dao.findAll());
                     } catch (Exception e) {
-                        view.displayError(e.getMessage());
+                        eh.handler(e);
                     }
                     break;
                 case "3":
@@ -55,7 +57,7 @@ public class ContactController {
                             view.displayMessage("Contact not found.");
                         }
                     } catch (Exception e) {
-                        view.displayError(e.getMessage());
+                        eh.handler(e);
                     }
                     break;
                 case "4":
